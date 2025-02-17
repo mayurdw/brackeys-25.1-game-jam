@@ -14,12 +14,17 @@ func _ready () -> void:
 func _char_entered ( character : String ) -> void:
 	if selected_index >= 0:
 		# Something is typed so far
-		var word := _list_of_words[selected_index]
+		var box := _list_of_words[ selected_index ]
+		var word := box.box_word
 		var typed_length := word_typed_so_far.length()
-		var index = word.box_word.find( character, typed_length - 1 )
 		
-		if typed_length == index:
+		if character == word[ typed_length ]:
 			word_typed_so_far += character
+			if word_typed_so_far == word:
+				_list_of_words.erase( box )
+				box.word_typed()
+				selected_index = -1
+				word_typed_so_far = ""
 	else:
 		var index := selected_index
 		for word in _list_of_words:
@@ -28,7 +33,7 @@ func _char_entered ( character : String ) -> void:
 				word_typed_so_far = character
 				selected_index = index
 				return
-		print ( "Character Not Found in Words" + character )
+		print ( "Character Not Found in Words = " + character )
 
 func _input ( event: InputEvent ) -> void:
 	if event is InputEventKey and event.is_pressed():
