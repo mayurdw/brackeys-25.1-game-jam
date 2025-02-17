@@ -10,9 +10,11 @@ script = ExtResource("1_k0yo8")
 [node name="Boxes Parent" type="Node2D" parent="."]
 
 [node name="Lettered Box" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
+position = Vector2(730, 153)
 box_word = "HOVER"
 
 [node name="Lettered Box2" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
+position = Vector2(113, 160)
 box_word = "UPPITY"
 
 [node name="Control" type="Control" parent="."]
