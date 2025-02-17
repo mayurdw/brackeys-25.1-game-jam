@@ -21,6 +21,7 @@ func _char_entered ( character : String ) -> void:
 		
 		if character == word[ typed_length ]:
 			word_typed_so_far += character
+			box.selected_count ( word_typed_so_far.length() )
 			if word_typed_so_far == word:
 				_list_of_words.erase( box )
 				box.word_typed()
@@ -33,6 +34,7 @@ func _char_entered ( character : String ) -> void:
 			if ( word.box_word.begins_with ( character ) ):
 				word_typed_so_far = character
 				selected_index = index
+				word.selected_count ( 1 )
 				return
 		print ( "Character Not Found in Words = " + character )
 
