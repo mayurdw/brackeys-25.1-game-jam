@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ly61qc1fvdrj"]
+
+[ext_resource type="Script" path="res://scripts/lettered_box.gd" id="1_penfu"]
+
+[node name="Lettered Box" type="Node2D"]
+script = ExtResource("1_penfu")

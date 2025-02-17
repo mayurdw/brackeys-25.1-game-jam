@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba7vglsw8lkjh"]
+
+[ext_resource type="Script" path="res://scripts/manager.gd" id="1_k0yo8"]
+[ext_resource type="PackedScene" uid="uid://ly61qc1fvdrj" path="res://scenes/lettered_box.tscn" id="2_a8pkj"]
+
+[node name="Manager" type="Node2D"]
+script = ExtResource("1_k0yo8")
+
+[node name="Boxes Parent" type="Node2D" parent="."]
+
+[node name="Lettered Box" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
+box_word = "HOVER"
+
+[node name="Lettered Box2" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
+box_word = "UPPITY"
