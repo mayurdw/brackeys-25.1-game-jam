@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var boxes: Node2D = $"Boxes Parent"
+@onready var display: Control = $Control/TypedLetter
 
 var word_typed_so_far := ""
 var selected_index := -1
@@ -38,6 +39,8 @@ func _char_entered ( character : String ) -> void:
 func _input ( event: InputEvent ) -> void:
 	if event is InputEventKey and event.is_pressed():
 		if ( event.keycode >= KEY_A and event.keycode <= KEY_Z ):
-			_char_entered( String.chr ( event.keycode ) )
+			var character = String.chr ( event.keycode )
+			display.letter_typed ( character )
+			_char_entered( character )
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )

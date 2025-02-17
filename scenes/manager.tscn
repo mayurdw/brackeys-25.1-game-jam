@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba7vglsw8lkjh"]
+[gd_scene load_steps=4 format=3 uid="uid://ba7vglsw8lkjh"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_k0yo8"]
+[ext_resource type="PackedScene" uid="uid://bfr5ps0vs22ba" path="res://scenes/typed_letter.tscn" id="2_7wnqw"]
 [ext_resource type="PackedScene" uid="uid://ly61qc1fvdrj" path="res://scenes/lettered_box.tscn" id="2_a8pkj"]
 
 [node name="Manager" type="Node2D"]
@@ -13,3 +14,16 @@ box_word = "HOVER"
 
 [node name="Lettered Box2" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
 box_word = "UPPITY"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TypedLetter" parent="Control" instance=ExtResource("2_7wnqw")]
+layout_mode = 1
