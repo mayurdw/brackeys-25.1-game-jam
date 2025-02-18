@@ -11,7 +11,7 @@ script = ExtResource("1_k0yo8")
 
 [node name="Lettered Box" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
 position = Vector2(730, 153)
-box_word = "HOVER"
+box_word = "OHOVER"
 
 [node name="Lettered Box2" parent="Boxes Parent" instance=ExtResource("2_a8pkj")]
 position = Vector2(113, 160)

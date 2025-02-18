@@ -2,3 +2,4 @@
 .godot/
 /android/
 addons/dialogue_manager
+addons/godot_vim

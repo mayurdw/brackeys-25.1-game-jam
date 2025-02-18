@@ -16,3 +16,6 @@ func selected_count ( length: int ) -> void:
 	label.append_text ( box_word.substr( 0, length ) )
 	label.pop()
 	label.append_text ( box_word.substr( length ) )
+
+func reset_count () -> void:
+	label.text = box_word
