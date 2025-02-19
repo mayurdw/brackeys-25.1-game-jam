@@ -1,7 +1,10 @@
 extends Node2D
 
+var box_node := preload("res://scenes/lettered_box.tscn")
+
 @onready var boxes: Node2D = $"Boxes Parent"
 @onready var display: Control = $Control/TypedLetter
+@onready var boxes_parent: Node2D = $"Boxes Parent"
 
 const _invalid_index := -1
 const _invalid_selection := ""
@@ -73,5 +76,22 @@ func _input ( event: InputEvent ) -> void:
 			_set_selection()
 		elif KEY_BACKSPACE == event.keycode:
 			_on_back_space()
+		elif KEY_ENTER == event.keycode:
+			# TODO: This is test code
+			var task := Task.new()
+			task.task_name = "ENTER"
+			
+			add_new_task( task )
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
+
+func add_new_task ( task: Task ) -> void:
+	var box_instance = box_node.instantiate()
+	
+	box_instance.task = task
+	boxes_parent.add_child( box_instance )
+	_list_of_words.append( box_instance )
+
+func add_tasks ( tasks: Array [ Task ] ) -> void:
+	for task in tasks:
+		add_new_task ( task )
