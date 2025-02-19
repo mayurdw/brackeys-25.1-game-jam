@@ -22,7 +22,7 @@ func _set_selection ( index: int = _invalid_index, character : String = _invalid
 func _on_selected_index ( character : String ) -> void:
 	# Something is typed so far
 	var box := _list_of_words[ selected_index ]
-	var word := box.box_word
+	var word := box.task.task_name
 	var typed_length := word_typed_so_far.length()
 	
 	if character == word[ typed_length ]:
@@ -37,7 +37,7 @@ func _on_new_word ( character : String ) -> void:
 	var index := selected_index
 	for word in _list_of_words:
 		index += 1
-		if ( word.box_word.begins_with ( character ) ):
+		if ( word.task.task_name.begins_with ( character ) ):
 			_set_selection( index, character )
 			word.selected_count ( 1 )
 			return
