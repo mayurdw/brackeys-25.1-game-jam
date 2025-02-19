@@ -20,6 +20,10 @@ grow_vertical = 2
 
 [node name="TypedLetter" parent="Control" instance=ExtResource("2_7wnqw")]
 layout_mode = 1
+offset_left = 88.0
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 8.0
 
 [node name="Boxes Parent" type="Node2D" parent="."]
 
@@ -38,5 +42,5 @@ task_timer_secs = 3
 task = NodePath("Uppity")
 
 [node name="Uppity" parent="Boxes Parent/Lettered Box2" instance=ExtResource("3_sn518")]
-task_name = "Uppity"
+task_name = "Liberty"
 task_timer_secs = 5

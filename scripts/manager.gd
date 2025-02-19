@@ -50,7 +50,7 @@ func _on_back_space () -> void:
 	display.letter_typed ( "BSP" )
 	if selected_index >= 0:
 		var typed_length = word_typed_so_far.length()
-		
+
 		if typed_length == 1:
 			_list_of_words[selected_index].reset_count()
 			_set_selection()
@@ -80,7 +80,7 @@ func _input ( event: InputEvent ) -> void:
 			# TODO: This is test code
 			var task := Task.new()
 			task.task_name = "ENTER"
-			
+
 			add_new_task( task )
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
