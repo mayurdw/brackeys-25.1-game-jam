@@ -4,9 +4,9 @@ class_name Box extends Control
 @onready var progress_bar: ProgressBar = $VBoxContainer/ProgressBar
 @onready var label: RichTextLabel = $VBoxContainer/PanelContainer/MarginContainer/CenterContainer/Label
 @onready var timer: Timer = $Timer
-
-@export_category("Task")
 @export var task : Task
+
+signal task_expired
 
 func _ready() -> void:
 	label.text = task.task_name
@@ -31,6 +31,6 @@ func selected_count ( length: int ) -> void:
 func reset_count () -> void:
 	label.text = task.task_name
 
-
 func _on_timer_timeout() -> void:
 	print ( "Task Expired" )
+	task_expired.emit()
