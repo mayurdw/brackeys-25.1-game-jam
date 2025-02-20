@@ -3,8 +3,10 @@ extends Node2D
 var box_node := preload("res://scenes/lettered_box.tscn")
 
 @onready var boxes: Node2D = $"Boxes Parent"
-@onready var display: Control = $Control/TypedLetter
+@onready var display: Control = $HUD/TypedLetter
 @onready var boxes_parent: Node2D = $"Boxes Parent"
+@onready var right_edge_container: VBoxContainer = $HUD/RightEdgeContainer
+@onready var containers: Array [ BoxContainer ] = [ $"HUD/Center Right Container/Center Right", $"HUD/Center Left Container/Center Left", $"HUD/Bottom Container/Bottom Left"]
 
 const _invalid_index := -1
 const _invalid_selection := ""
@@ -78,10 +80,14 @@ func _input ( event: InputEvent ) -> void:
 			_on_back_space()
 		elif KEY_ENTER == event.keycode:
 			# TODO: This is test code
-			var task := Task.new()
-			task.task_name = "ENTER"
+			var task1 := Task.new()
+			task1.task_name = "Top Left"
 
-			add_new_task( task )
+			var task2 := Task.new()
+			task2.task_name = "Top Right"
+			var task3 := Task.new()
+			task3.task_name = "Bottom Left"
+			add_tasks( [ task1, task2, task3 ] )
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
 
@@ -89,9 +95,12 @@ func add_new_task ( task: Task ) -> void:
 	var box_instance = box_node.instantiate()
 	
 	box_instance.task = task
-	boxes_parent.add_child( box_instance )
+	_add_to_container ( box_instance )
 	_list_of_words.append( box_instance )
 
 func add_tasks ( tasks: Array [ Task ] ) -> void:
 	for task in tasks:
 		add_new_task ( task )
+
+func _add_to_container ( box : Box ) -> void:
+	containers.pick_random().add_child( box )

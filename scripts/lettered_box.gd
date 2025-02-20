@@ -1,8 +1,8 @@
 class_name Box extends Control
 
 @export var highlight_color := Color.CORAL
-@onready var progress_bar: ProgressBar = $VBoxContainer/ProgressBar
-@onready var label: RichTextLabel = $VBoxContainer/PanelContainer/MarginContainer/CenterContainer/Label
+@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var label: RichTextLabel = $PanelContainer/MarginContainer/CenterContainer/Label
 @onready var timer: Timer = $Timer
 @export var task : Task
 

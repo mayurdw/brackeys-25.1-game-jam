@@ -36,48 +36,41 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="Lettered Box" type="Control" node_paths=PackedStringArray("task")]
-layout_mode = 3
-anchors_preset = 0
+[node name="Lettered Box" type="VBoxContainer"]
+offset_right = 80.0
+offset_bottom = 58.0
 script = ExtResource("1_penfu")
-task = NodePath("Task")
-
-[node name="Task" parent="." instance=ExtResource("2_awu4n")]
-task_name = "Test"
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(80, 0)
-layout_mode = 2
-offset_right = 25.0
-offset_bottom = 55.0
+[node name="Task" parent="." instance=ExtResource("2_awu4n")]
+task_name = "Test"
 
-[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(0, 7)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_fi5ql")
 theme_override_styles/fill = SubResource("StyleBoxFlat_1oeqe")
-max_value = 10.0
-value = 9.0
+max_value = 30.0
+step = 1.0
 show_percentage = false
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eom6a")
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/PanelContainer/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="RichTextLabel" parent="VBoxContainer/PanelContainer/MarginContainer/CenterContainer"]
+[node name="Label" type="RichTextLabel" parent="PanelContainer/MarginContainer/CenterContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Test"
