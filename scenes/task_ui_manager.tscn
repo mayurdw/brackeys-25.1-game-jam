@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://ihr645dajete"]
+
+[ext_resource type="Script" path="res://scripts/task_ui_manager.gd" id="1_2pm8v"]
+
+[node name="Task UI Manager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2pm8v")
+
+[node name="Center Right Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_right = 32
+
+[node name="Center Right" type="VBoxContainer" parent="Center Right Container"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="Center Left Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+
+[node name="Center Left" type="VBoxContainer" parent="Center Left Container"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Bottom Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_bottom = 48
+
+[node name="Bottom Left" type="HBoxContainer" parent="Bottom Container"]
+layout_mode = 2
+theme_override_constants/separation = 48

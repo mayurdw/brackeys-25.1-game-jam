@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://sy32awi58kkg"]
+
+[ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="1_e362k"]
+[ext_resource type="PackedScene" uid="uid://drx88lqagsnsn" path="res://scenes/level_data.tscn" id="2_cuc45"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="Level Data" parent="." instance=ExtResource("2_cuc45")]
+words = Array[String](["hover", "parch", "automa", "cravats", "matronly", "lambskin", "empowered", "fascinate", "skylights", "deployment"])
+
+[node name="Manager" parent="." node_paths=PackedStringArray("level_tasks") instance=ExtResource("1_e362k")]
+level_tasks = NodePath("../Level Data")

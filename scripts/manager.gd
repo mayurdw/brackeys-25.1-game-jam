@@ -2,11 +2,9 @@ extends Node2D
 
 var box_node := preload("res://scenes/lettered_box.tscn")
 
-@onready var boxes: Node2D = $"Boxes Parent"
 @onready var display: Control = $HUD/TypedLetter
-@onready var boxes_parent: Node2D = $"Boxes Parent"
-@onready var right_edge_container: VBoxContainer = $HUD/RightEdgeContainer
-@onready var containers: Array [ BoxContainer ] = [ $"HUD/Center Right Container/Center Right", $"HUD/Center Left Container/Center Left", $"HUD/Bottom Container/Bottom Left"]
+@onready var task_ui_manager: Control = $"HUD/Task UI Manager"
+@export var level_tasks : LevelData
 
 const _invalid_index := -1
 const _invalid_selection := ""
@@ -16,9 +14,9 @@ var selected_index := _invalid_index
 var _list_of_words : Array [ Box ] = []
 
 func _ready () -> void:
-	for box in boxes.get_children( false ):
-		if box is Box:
-			_list_of_words.append( box )
+	_list_of_words = task_ui_manager.get_list_of_boxes()
+	if level_tasks.are_there_more_tasks():
+		add_new_task( level_tasks.next_task() )
 
 func _set_selection ( index: int = _invalid_index, character : String = _invalid_selection ) -> void:
 	selected_index = index
@@ -34,9 +32,7 @@ func _on_selected_index ( character : String ) -> void:
 		word_typed_so_far += character
 		box.selected_count ( word_typed_so_far.length() )
 		if word_typed_so_far == word:
-			_list_of_words.erase( box )
-			box.word_typed()
-			_set_selection()
+			_on_task_completed( box )
 
 func _on_new_word ( character : String ) -> void:
 	var index := selected_index
@@ -91,16 +87,21 @@ func _input ( event: InputEvent ) -> void:
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
 
+func _on_task_completed ( box: Box ) -> void:
+	level_tasks.task_completed()
+	_list_of_words.erase( box )
+	box.word_typed()
+	_set_selection()
+	if level_tasks.are_there_more_tasks():
+		add_new_task( level_tasks.next_task() )
+
 func add_new_task ( task: Task ) -> void:
 	var box_instance = box_node.instantiate()
 	
 	box_instance.task = task
-	_add_to_container ( box_instance )
+	task_ui_manager.add_new_box ( box_instance )
 	_list_of_words.append( box_instance )
 
 func add_tasks ( tasks: Array [ Task ] ) -> void:
 	for task in tasks:
 		add_new_task ( task )
-
-func _add_to_container ( box : Box ) -> void:
-	containers.pick_random().add_child( box )
