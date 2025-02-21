@@ -9,7 +9,8 @@
 script = ExtResource("1_k0yo8")
 
 [node name="Player" parent="." instance=ExtResource("2_e7d0s")]
-position = Vector2(562, 324)
+position = Vector2(960, 540)
+speed = 1500
 
 [node name="Interval Timer" type="Timer" parent="."]
 one_shot = true
@@ -19,8 +20,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
