@@ -6,7 +6,7 @@
 [node name="Level 1" type="Node2D"]
 
 [node name="Level Data" parent="." instance=ExtResource("2_cuc45")]
-words = Array[String](["hover", "parch", "automa", "cravats", "matronly", "lambskin", "empowered", "fascinate", "skylights", "deployment"])
+words = Array[String](["hover", "parch", "Automa", "Cravats", "Matronly", "LAMBskin", "emPOWERed", "fascinate", "SKYLIGHTS", "dEpLoYmEnT"])
 
 [node name="Manager" parent="." node_paths=PackedStringArray("level_tasks") instance=ExtResource("1_e362k")]
 level_tasks = NodePath("../Level Data")

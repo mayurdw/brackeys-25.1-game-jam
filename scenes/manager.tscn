@@ -7,6 +7,9 @@
 [node name="Manager" type="Node2D"]
 script = ExtResource("1_k0yo8")
 
+[node name="Interval Timer" type="Timer" parent="."]
+one_shot = true
+
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -32,3 +35,5 @@ grow_vertical = 0
 
 [node name="Task UI Manager" parent="HUD" instance=ExtResource("3_234jq")]
 layout_mode = 1
+
+[connection signal="timeout" from="Interval Timer" to="." method="_on_timer_expiry"]
