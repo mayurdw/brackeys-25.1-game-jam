@@ -32,5 +32,5 @@ func reset_count () -> void:
 	label.text = task.task_name
 
 func _on_timer_timeout() -> void:
-	print ( "Task Expired" )
+	print( "Task Expired with text = " + task.task_name )
 	task_expired.emit()
