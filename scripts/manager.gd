@@ -5,6 +5,10 @@ var box_node := preload("res://scenes/lettered_box.tscn")
 @onready var display: Control = $HUD/TypedLetter
 @onready var task_ui_manager: Control = $"HUD/Task UI Manager"
 @onready var interval_timer: Timer = $"Interval Timer"
+@onready var center_right: Control = $"HUD/Center Right Sprite Placement"
+@onready var center_left: Control = $"HUD/Center Left Sprite Placement"
+@onready var bottom: Control = $"HUD/Bottom Sprite Placement"
+@onready var player: Player = $Player
 
 @export var level_tasks : LevelData
 
@@ -19,6 +23,7 @@ var _caps_lock_enabled = false
 func _ready () -> void:
 	_list_of_words = task_ui_manager.get_list_of_boxes()
 	_on_timer_expiry()
+	player.destination = get_viewport_rect().size / 2
 
 func _set_selection ( index: int = _invalid_index, character : String = _invalid_selection ) -> void:
 	selected_index = index
@@ -36,6 +41,20 @@ func _on_selected_index ( character : String ) -> void:
 		if word_typed_so_far == word:
 			_on_task_completed( box )
 
+func _calculate_sprite_position ( box : Box ) -> Control:
+	var left_distance = box.global_position.distance_to( center_left.global_position )
+	var right_distance = box.global_position.distance_to( center_right.global_position )
+	var bottom_distance = box.global_position.distance_to( bottom.global_position )
+	
+	print ( "Left = " + str ( left_distance ) + ", Right = " + str ( right_distance ) + " & Bottom = " + str ( bottom_distance ) )
+	
+	if box.global_position.y > get_viewport_rect().size.y / 2:
+		return bottom
+	if left_distance < right_distance && left_distance < bottom_distance:
+		return center_left
+	else:
+		return center_right
+
 func _on_new_word ( character : String ) -> void:
 	var index := selected_index
 	for word in _list_of_words:
@@ -43,6 +62,7 @@ func _on_new_word ( character : String ) -> void:
 		if ( word.task.task_name.begins_with ( character ) ):
 			_set_selection( index, character )
 			word.selected_count ( 1 )
+			player.destination = _calculate_sprite_position( word ).global_position
 			return
 
 	print ( "Character Not Found in Words = " + character )
