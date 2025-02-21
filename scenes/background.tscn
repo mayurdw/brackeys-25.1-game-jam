@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://c33vhy86ick0q"]
+
+[ext_resource type="Texture2D" uid="uid://clt85s4k8ravn" path="res://assets/images/floor.png" id="1_123vt"]
+[ext_resource type="Texture2D" uid="uid://l1lw4xn6dwq4" path="res://assets/images/desk.png" id="2_aocaa"]
+[ext_resource type="Texture2D" uid="uid://bfn28ct2uqr65" path="res://assets/images/work_station.png" id="3_8iu4i"]
+[ext_resource type="Texture2D" uid="uid://bpbaw4wvo3hw" path="res://assets/images/wall.png" id="4_7u5sc"]
+[ext_resource type="Texture2D" uid="uid://bywqqo23ax46" path="res://assets/images/Plant.png" id="5_xtl3a"]
+[ext_resource type="Texture2D" uid="uid://bt3okbltr3icp" path="res://assets/images/background.png" id="6_emyuw"]
+[ext_resource type="Texture2D" uid="uid://mmwi1ofoqx8a" path="res://assets/images/doors.png" id="7_5ceii"]
+[ext_resource type="Texture2D" uid="uid://byr7j8x6fiqkm" path="res://assets/images/printer.png" id="8_uk668"]
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Floor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_123vt")
+
+[node name="Bottom" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 895.0
+offset_right = 1204.0
+offset_bottom = 1375.0
+rotation = -4.71239
+scale = Vector2(1, 1.5)
+texture = ExtResource("2_aocaa")
+
+[node name="Right Desk" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1696.0
+offset_top = 390.0
+offset_right = 1920.0
+offset_bottom = 870.0
+texture = ExtResource("2_aocaa")
+
+[node name="Left Desk" type="TextureRect" parent="."]
+layout_mode = 0
+offset_top = 392.0
+offset_right = 224.0
+offset_bottom = 872.0
+texture = ExtResource("2_aocaa")
+flip_h = true
+
+[node name="Work_station" type="TextureRect" parent="Left Desk"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 328.0
+offset_right = 96.0
+offset_bottom = 368.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_8iu4i")
+
+[node name="Wall" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 160.0
+texture = ExtResource("4_7u5sc")
+
+[node name="Plant" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 87.0
+offset_right = 1060.0
+offset_bottom = 332.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xtl3a")
+
+[node name="Plant2" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 1040.0
+offset_top = 87.0
+offset_right = 1200.0
+offset_bottom = 332.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xtl3a")
+
+[node name="Boards" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 40.0
+offset_right = 275.0
+offset_bottom = 75.0
+scale = Vector2(5, 5)
+texture = ExtResource("6_emyuw")
+
+[node name="LeftDoor" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 1696.0
+offset_right = 1808.0
+offset_bottom = 160.0
+texture = ExtResource("7_5ceii")
+
+[node name="Right Door" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 1808.0
+offset_right = 1920.0
+offset_bottom = 160.0
+texture = ExtResource("7_5ceii")
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="Wall"]
+layout_mode = 0
+offset_left = 1232.0
+offset_top = 8.0
+offset_right = 1272.0
+offset_bottom = 48.0
+scale = Vector2(5, 5)
+texture = ExtResource("8_uk668")

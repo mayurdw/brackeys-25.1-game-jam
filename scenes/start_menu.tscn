@@ -1,0 +1,84 @@
+[gd_scene load_steps=5 format=3 uid="uid://hs837pv64b65"]
+
+[ext_resource type="PackedScene" uid="uid://c33vhy86ick0q" path="res://scenes/background.tscn" id="1_l3dbh"]
+[ext_resource type="PackedScene" uid="uid://ly61qc1fvdrj" path="res://scenes/lettered_box.tscn" id="2_qbh4h"]
+[ext_resource type="Script" path="res://scripts/task.gd" id="3_sdna6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhs60"]
+line_spacing = 15.0
+font_size = 72
+
+[node name="Start Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="." instance=ExtResource("1_l3dbh")]
+layout_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Typa Typa"
+label_settings = SubResource("LabelSettings_jhs60")
+
+[node name="Menu" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" parent="CenterContainer/VBoxContainer/Menu" node_paths=PackedStringArray("task") instance=ExtResource("2_qbh4h")]
+layout_mode = 2
+task = NodePath("Task2")
+
+[node name="Task2" type="Node" parent="CenterContainer/VBoxContainer/Menu/Start"]
+script = ExtResource("3_sdna6")
+task_name = "START"
+
+[node name="Credits" parent="CenterContainer/VBoxContainer/Menu" node_paths=PackedStringArray("task") instance=ExtResource("2_qbh4h")]
+layout_mode = 2
+task = NodePath("Task2")
+
+[node name="Task2" type="Node" parent="CenterContainer/VBoxContainer/Menu/Credits"]
+script = ExtResource("3_sdna6")
+task_name = "CREDITS"
+
+[node name="Exit" parent="CenterContainer/VBoxContainer/Menu" node_paths=PackedStringArray("task") instance=ExtResource("2_qbh4h")]
+layout_mode = 2
+task = NodePath("Task2")
+
+[node name="Task2" type="Node" parent="CenterContainer/VBoxContainer/Menu/Exit"]
+script = ExtResource("3_sdna6")
+task_name = "EXIT"
+
+[node name="Game Creds" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -285.0
+offset_top = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="Game Creds"]
+layout_mode = 2
+text = "Game by HorribleGamer. 
+
+Made for Brackey's 2025.1 Game Jam"

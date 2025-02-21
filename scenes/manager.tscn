@@ -1,17 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba7vglsw8lkjh"]
+[gd_scene load_steps=6 format=3 uid="uid://ba7vglsw8lkjh"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_k0yo8"]
 [ext_resource type="PackedScene" uid="uid://bfr5ps0vs22ba" path="res://scenes/typed_letter.tscn" id="2_7wnqw"]
 [ext_resource type="PackedScene" uid="uid://d2y0f3yk8q137" path="res://scenes/player.tscn" id="2_e7d0s"]
-[ext_resource type="Texture2D" uid="uid://l1lw4xn6dwq4" path="res://assets/images/desk.png" id="3_7y3xu"]
+[ext_resource type="PackedScene" uid="uid://c33vhy86ick0q" path="res://scenes/background.tscn" id="2_mgnpm"]
 [ext_resource type="PackedScene" uid="uid://ihr645dajete" path="res://scenes/task_ui_manager.tscn" id="3_234jq"]
-[ext_resource type="Texture2D" uid="uid://clt85s4k8ravn" path="res://assets/images/floor.png" id="4_bv32h"]
-[ext_resource type="Texture2D" uid="uid://bywqqo23ax46" path="res://assets/images/Plant.png" id="4_dhg7r"]
-[ext_resource type="Texture2D" uid="uid://bfn28ct2uqr65" path="res://assets/images/work_station.png" id="4_vt8v8"]
-[ext_resource type="Texture2D" uid="uid://bt3okbltr3icp" path="res://assets/images/background.png" id="5_0pxm0"]
-[ext_resource type="Texture2D" uid="uid://bpbaw4wvo3hw" path="res://assets/images/wall.png" id="6_2657c"]
-[ext_resource type="Texture2D" uid="uid://mmwi1ofoqx8a" path="res://assets/images/doors.png" id="9_ts6u5"]
-[ext_resource type="Texture2D" uid="uid://byr7j8x6fiqkm" path="res://assets/images/printer.png" id="10_oq6yp"]
 
 [node name="Manager" type="Node2D"]
 script = ExtResource("1_k0yo8")
@@ -26,107 +19,8 @@ offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Floor" type="TextureRect" parent="HUD"]
+[node name="Background" parent="HUD" instance=ExtResource("2_mgnpm")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_bv32h")
-
-[node name="Bottom" type="TextureRect" parent="HUD"]
-offset_left = 980.0
-offset_top = 895.0
-offset_right = 1204.0
-offset_bottom = 1375.0
-rotation = -4.71239
-scale = Vector2(1, 1.5)
-texture = ExtResource("3_7y3xu")
-
-[node name="Right Desk" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_left = 1696.0
-offset_top = 390.0
-offset_right = 1920.0
-offset_bottom = 870.0
-texture = ExtResource("3_7y3xu")
-
-[node name="Left Desk" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_top = 392.0
-offset_right = 224.0
-offset_bottom = 872.0
-texture = ExtResource("3_7y3xu")
-flip_h = true
-
-[node name="Work_station" type="TextureRect" parent="HUD/Left Desk"]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 328.0
-offset_right = 96.0
-offset_bottom = 368.0
-scale = Vector2(3, 3)
-texture = ExtResource("4_vt8v8")
-
-[node name="Wall" type="TextureRect" parent="HUD"]
-layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 160.0
-texture = ExtResource("6_2657c")
-
-[node name="Plant" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 87.0
-offset_right = 1060.0
-offset_bottom = 332.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_dhg7r")
-
-[node name="Plant2" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 1040.0
-offset_top = 87.0
-offset_right = 1200.0
-offset_bottom = 332.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_dhg7r")
-
-[node name="Boards" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 141.0
-offset_top = 40.0
-offset_right = 275.0
-offset_bottom = 75.0
-scale = Vector2(5, 5)
-texture = ExtResource("5_0pxm0")
-
-[node name="LeftDoor" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 1696.0
-offset_right = 1808.0
-offset_bottom = 160.0
-texture = ExtResource("9_ts6u5")
-
-[node name="Right Door" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 1808.0
-offset_right = 1920.0
-offset_bottom = 160.0
-texture = ExtResource("9_ts6u5")
-flip_h = true
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Wall"]
-layout_mode = 0
-offset_left = 1232.0
-offset_top = 8.0
-offset_right = 1272.0
-offset_bottom = 48.0
-scale = Vector2(5, 5)
-texture = ExtResource("10_oq6yp")
 
 [node name="TypedLetter" parent="HUD" instance=ExtResource("2_7wnqw")]
 layout_mode = 1
@@ -175,9 +69,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 512.0
-offset_top = -160.0
+offset_top = -230.0
 offset_right = -648.0
-offset_bottom = -160.0
+offset_bottom = -230.0
 grow_horizontal = 2
 grow_vertical = 0
 
