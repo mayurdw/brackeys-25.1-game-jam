@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpiwo17mxkqq2"]
+
+[ext_resource type="Script" path="res://scenes/typing_box.gd" id="1_rm1l6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eom6a"]
+bg_color = Color(0.964336, 0.888243, 0.883372, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.82667, 0.346839, 0.200605, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Typed Box" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_eom6a")
+script = ExtResource("1_rm1l6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Test"
+fit_content = true
+autowrap_mode = 0
