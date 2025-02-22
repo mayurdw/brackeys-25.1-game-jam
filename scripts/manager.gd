@@ -1,7 +1,5 @@
 extends Node2D
 
-var box_node := preload("res://scenes/lettered_box.tscn")
-
 @onready var display: Control = $HUD/TypedLetter
 @onready var task_ui_manager: Control = $"HUD/Task UI Manager"
 @onready var interval_timer: Timer = $"Interval Timer"
@@ -17,7 +15,7 @@ const _invalid_selection := ""
 
 var word_typed_so_far := _invalid_selection
 var selected_index := _invalid_index
-var _list_of_words : Array [ Box ] = []
+var _list_of_words : Array [ TypingBox ] = []
 var _caps_lock_enabled = false
 
 func _ready () -> void:
@@ -32,7 +30,7 @@ func _set_selection ( index: int = _invalid_index, character : String = _invalid
 func _on_selected_index ( character : String ) -> void:
 	# Something is typed so far
 	var box := _list_of_words[ selected_index ]
-	var word := box.task.task_name
+	var word := box.box_text
 	var typed_length := word_typed_so_far.length()
 	
 	if character == word[ typed_length ]:
@@ -41,7 +39,7 @@ func _on_selected_index ( character : String ) -> void:
 		if word_typed_so_far == word:
 			_on_task_completed( box )
 
-func _calculate_sprite_position ( box : Box ) -> Control:
+func _calculate_sprite_position ( box : TypingBox ) -> Control:
 	var left_distance = box.global_position.distance_to( center_left.global_position )
 	var right_distance = box.global_position.distance_to( center_right.global_position )
 	var bottom_distance = box.global_position.distance_to( bottom.global_position )
@@ -59,7 +57,7 @@ func _on_new_word ( character : String ) -> void:
 	var index := selected_index
 	for word in _list_of_words:
 		index += 1
-		if ( word.task.task_name.begins_with ( character ) ):
+		if ( word.box_text.begins_with ( character ) ):
 			_set_selection( index, character )
 			word.selected_count ( 1 )
 			player.destination = _calculate_sprite_position( word ).global_position
@@ -106,19 +104,15 @@ func _input ( event: InputEvent ) -> void:
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
 
-func _on_task_completed ( box: Box ) -> void:
+func _on_task_completed ( box: TypingBox ) -> void:
 	_list_of_words.erase( box )
-	box.word_typed()
+	task_ui_manager.word_typed( box )
 	_set_selection()
 	if level_tasks.are_there_more_tasks():
 		add_new_task( level_tasks.next_task() )
 
 func add_new_task ( task: Task ) -> void:
-	var box_instance = box_node.instantiate()
-	
-	box_instance.task = task
-	task_ui_manager.add_new_box ( box_instance )
-	_list_of_words.append( box_instance )
+	_list_of_words.append( task_ui_manager.add_new_box ( task ) )
 	_start_interval_timer()
 
 func add_tasks ( tasks: Array [ Task ] ) -> void:
