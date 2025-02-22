@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://hs837pv64b65"]
 
-[ext_resource type="PackedScene" uid="uid://c33vhy86ick0q" path="res://scenes/background.tscn" id="1_l3dbh"]
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_qsu1w"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="2_b46qe"]
-[ext_resource type="PackedScene" uid="uid://bfr5ps0vs22ba" path="res://scenes/typed_letter.tscn" id="4_gnr7c"]
+[ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_coli5"]
+[ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="4_owbep"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jhs60"]
 line_spacing = 15.0
@@ -18,8 +18,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qsu1w")
 
-[node name="Background" parent="." instance=ExtResource("1_l3dbh")]
+[node name="HUD" parent="." instance=ExtResource("3_coli5")]
 layout_mode = 1
+
+[node name="Manager" parent="." node_paths=PackedStringArray("display") instance=ExtResource("4_owbep")]
+display = NodePath("../HUD")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -51,14 +54,5 @@ layout_mode = 2
 [node name="Quit" parent="CenterContainer/VBoxContainer/Menu" instance=ExtResource("2_b46qe")]
 layout_mode = 2
 
-[node name="TypedLetter" parent="." instance=ExtResource("4_gnr7c")]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-grow_horizontal = 0
-grow_vertical = 0
+[connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
+[connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]
