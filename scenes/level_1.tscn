@@ -1,12 +1,64 @@
-[gd_scene load_steps=3 format=3 uid="uid://sy32awi58kkg"]
+[gd_scene load_steps=5 format=3 uid="uid://sy32awi58kkg"]
 
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="1_e362k"]
+[ext_resource type="PackedScene" uid="uid://ihr645dajete" path="res://scenes/task_ui_manager.tscn" id="2_cdoir"]
 [ext_resource type="PackedScene" uid="uid://drx88lqagsnsn" path="res://scenes/level_data.tscn" id="2_cuc45"]
+[ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_gwmga"]
 
 [node name="Level 1" type="Node2D"]
+
+[node name="HUD" parent="." instance=ExtResource("3_gwmga")]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Task UI Manager" parent="HUD" instance=ExtResource("2_cdoir")]
+layout_mode = 1
+
+[node name="Center Right Sprite Placement" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -16.0
+offset_right = -256.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Center Left Sprite Placement" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = -16.0
+offset_right = 256.0
+offset_bottom = 16.0
+grow_vertical = 2
+
+[node name="Bottom Sprite Placement" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 512.0
+offset_top = -230.0
+offset_right = -648.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Level Data" parent="." instance=ExtResource("2_cuc45")]
 words = Array[String](["hover", "parch", "Automa", "Cravats", "Matronly", "LAMBskin", "emPOWERed", "fascinate", "SKYLIGHTS", "dEpLoYmEnT"])
 
-[node name="Manager" parent="." node_paths=PackedStringArray("level_tasks") instance=ExtResource("1_e362k")]
+[node name="Manager" parent="." node_paths=PackedStringArray("level_tasks", "display", "task_ui_manager", "center_right", "center_left", "bottom") instance=ExtResource("1_e362k")]
 level_tasks = NodePath("../Level Data")
+display = NodePath("../HUD")
+task_ui_manager = NodePath("../HUD/Task UI Manager")
+center_right = NodePath("../HUD/Center Right Sprite Placement")
+center_left = NodePath("../HUD/Center Left Sprite Placement")
+bottom = NodePath("../HUD/Bottom Sprite Placement")

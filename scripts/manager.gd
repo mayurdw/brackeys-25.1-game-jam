@@ -1,14 +1,15 @@
 extends Node2D
 
-@onready var display: Control = $HUD/TypedLetter
-@onready var task_ui_manager: Control = $"HUD/Task UI Manager"
 @onready var interval_timer: Timer = $"Interval Timer"
-@onready var center_right: Control = $"HUD/Center Right Sprite Placement"
-@onready var center_left: Control = $"HUD/Center Left Sprite Placement"
-@onready var bottom: Control = $"HUD/Bottom Sprite Placement"
 @onready var player: Player = $Player
 
 @export var level_tasks : LevelData
+@export var display: Control
+
+@export var task_ui_manager: Control
+@export var center_right: Control
+@export var center_left: Control
+@export var bottom: Control
 
 const _invalid_index := -1
 const _invalid_selection := ""
