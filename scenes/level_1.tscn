@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://sy32awi58kkg"]
+[gd_scene load_steps=7 format=3 uid="uid://sy32awi58kkg"]
 
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="1_e362k"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_h7rru"]
 [ext_resource type="PackedScene" uid="uid://ihr645dajete" path="res://scenes/task_ui_manager.tscn" id="2_cdoir"]
 [ext_resource type="PackedScene" uid="uid://drx88lqagsnsn" path="res://scenes/level_data.tscn" id="2_cuc45"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_gwmga"]
+[ext_resource type="PackedScene" uid="uid://wy2h67edgwci" path="res://scenes/task_manager.tscn" id="6_560l7"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Level 1" type="Node2D" node_paths=PackedStringArray("manager", "task_manager")]
+script = ExtResource("1_h7rru")
+manager = NodePath("Manager")
+task_manager = NodePath("Task Manager")
 
 [node name="HUD" parent="." instance=ExtResource("3_gwmga")]
 offset_right = 1920.0
@@ -55,10 +60,16 @@ grow_vertical = 0
 [node name="Level Data" parent="." instance=ExtResource("2_cuc45")]
 words = Array[String](["hover", "parch", "Automa", "Cravats", "Matronly", "LAMBskin", "emPOWERed", "fascinate", "SKYLIGHTS", "dEpLoYmEnT"])
 
-[node name="Manager" parent="." node_paths=PackedStringArray("level_tasks", "display", "task_ui_manager", "center_right", "center_left", "bottom") instance=ExtResource("1_e362k")]
-level_tasks = NodePath("../Level Data")
+[node name="Manager" parent="." node_paths=PackedStringArray("display") instance=ExtResource("1_e362k")]
 display = NodePath("../HUD")
+
+[node name="Task Manager" parent="." node_paths=PackedStringArray("level_tasks", "task_ui_manager", "center_right", "center_left", "bottom") instance=ExtResource("6_560l7")]
+level_tasks = NodePath("../Level Data")
 task_ui_manager = NodePath("../HUD/Task UI Manager")
 center_right = NodePath("../HUD/Center Right Sprite Placement")
 center_left = NodePath("../HUD/Center Left Sprite Placement")
 bottom = NodePath("../HUD/Bottom Sprite Placement")
+
+[connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
+[connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]
+[connection signal="new_word_added" from="Task Manager" to="." method="_on_task_manager_new_word_added"]

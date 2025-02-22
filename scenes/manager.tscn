@@ -1,16 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba7vglsw8lkjh"]
+[gd_scene load_steps=2 format=3 uid="uid://ba7vglsw8lkjh"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_k0yo8"]
-[ext_resource type="PackedScene" uid="uid://d2y0f3yk8q137" path="res://scenes/player.tscn" id="2_e7d0s"]
 
 [node name="Manager" type="Node2D"]
 script = ExtResource("1_k0yo8")
-
-[node name="Player" parent="." instance=ExtResource("2_e7d0s")]
-position = Vector2(960, 524)
-speed = 1500
-
-[node name="Interval Timer" type="Timer" parent="."]
-one_shot = true
-
-[connection signal="timeout" from="Interval Timer" to="." method="_on_timer_expiry"]

@@ -1,15 +1,6 @@
 extends Node2D
 
-@onready var interval_timer: Timer = $"Interval Timer"
-@onready var player: Player = $Player
-
-@export var level_tasks : LevelData
 @export var display: Control
-
-@export var task_ui_manager: Control
-@export var center_right: Control
-@export var center_left: Control
-@export var bottom: Control
 
 const _invalid_index := -1
 const _invalid_selection := ""
@@ -19,10 +10,14 @@ var selected_index := _invalid_index
 var _list_of_words : Array [ TypingBox ] = []
 var _caps_lock_enabled = false
 
-func _ready () -> void:
-	_list_of_words = task_ui_manager.get_list_of_boxes()
-	_on_timer_expiry()
-	player.destination = get_viewport_rect().size / 2
+signal on_word_selected ( word: TypingBox )
+signal on_word_typed ( word: TypingBox )
+
+func set_initial_list_of_words ( words: Array [ TypingBox ] ) -> void:
+	_list_of_words = words
+
+func append_new_word ( word: TypingBox ) -> void:
+	_list_of_words.append( word )
 
 func _set_selection ( index: int = _invalid_index, character : String = _invalid_selection ) -> void:
 	selected_index = index
@@ -38,21 +33,7 @@ func _on_selected_index ( character : String ) -> void:
 		word_typed_so_far += character
 		box.selected_count ( word_typed_so_far.length() )
 		if word_typed_so_far == word:
-			_on_task_completed( box )
-
-func _calculate_sprite_position ( box : TypingBox ) -> Control:
-	var left_distance = box.global_position.distance_to( center_left.global_position )
-	var right_distance = box.global_position.distance_to( center_right.global_position )
-	var bottom_distance = box.global_position.distance_to( bottom.global_position )
-	
-	print ( "Left = " + str ( left_distance ) + ", Right = " + str ( right_distance ) + " & Bottom = " + str ( bottom_distance ) )
-	
-	if box.global_position.y > get_viewport_rect().size.y / 2:
-		return bottom
-	if left_distance < right_distance && left_distance < bottom_distance:
-		return center_left
-	else:
-		return center_right
+			_on_word_completed( box )
 
 func _on_new_word ( character : String ) -> void:
 	var index := selected_index
@@ -61,7 +42,7 @@ func _on_new_word ( character : String ) -> void:
 		if ( word.box_text.begins_with ( character ) ):
 			_set_selection( index, character )
 			word.selected_count ( 1 )
-			player.destination = _calculate_sprite_position( word ).global_position
+			on_word_selected.emit( word )
 			return
 
 	print ( "Character Not Found in Words = " + character )
@@ -105,26 +86,7 @@ func _input ( event: InputEvent ) -> void:
 		else:
 			print ( "Event Key Pressed = " + str ( event.keycode ) )
 
-func _on_task_completed ( box: TypingBox ) -> void:
+func _on_word_completed ( box: TypingBox ) -> void:
 	_list_of_words.erase( box )
-	task_ui_manager.word_typed( box )
 	_set_selection()
-	if level_tasks.are_there_more_tasks():
-		add_new_task( level_tasks.next_task() )
-
-func add_new_task ( task: Task ) -> void:
-	_list_of_words.append( task_ui_manager.add_new_box ( task ) )
-	_start_interval_timer()
-
-func add_tasks ( tasks: Array [ Task ] ) -> void:
-	for task in tasks:
-		add_new_task ( task )
-
-func _start_interval_timer( ) -> void:
-	interval_timer.stop()
-	interval_timer.wait_time = level_tasks.get_interval_time()
-	interval_timer.start()
-
-func _on_timer_expiry() -> void:
-	if level_tasks.are_there_more_tasks():
-		add_new_task( level_tasks.next_task() )
+	on_word_typed.emit( box )
