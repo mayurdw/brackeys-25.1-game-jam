@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2xfuxg0avy8y"]
+[gd_scene load_steps=6 format=3 uid="uid://c2xfuxg0avy8y"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_j1gmt"]
+[ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="2_y6y3b"]
 
-[node name="Node" type="Node"]
+[sub_resource type="LabelSettings" id="LabelSettings_otb4x"]
+line_spacing = 15.0
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_ttsbd"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2s7w"]
+font_size = 36
+
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_j1gmt")
+
+[node name="HUD" parent="." instance=ExtResource("2_y6y3b")]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="CenterContainer" type="CenterContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Production"
+label_settings = SubResource("LabelSettings_otb4x")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Game By:"
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Label2" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Mayur \"HorribleGamer\" Wadhwani"
+label_settings = SubResource("LabelSettings_a2s7w")

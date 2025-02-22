@@ -38,7 +38,7 @@ theme_override_constants/separation = 40
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Typa Typa"
+text = "Production"
 label_settings = SubResource("LabelSettings_jhs60")
 
 [node name="Menu" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
