@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://wibx1w1y1pya"]
+[gd_scene load_steps=6 format=3 uid="uid://wibx1w1y1pya"]
 
 [ext_resource type="PackedScene" uid="uid://bfr5ps0vs22ba" path="res://scenes/typed_letter.tscn" id="1_cx5a8"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_g5bfb"]
 [ext_resource type="PackedScene" uid="uid://c33vhy86ick0q" path="res://scenes/background.tscn" id="2_3eq62"]
+[ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="4_1gkf4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_qvy8b"]
-font_size = 48
+font = ExtResource("4_1gkf4")
+font_size = 72
 font_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
 [node name="HUD" type="Control"]

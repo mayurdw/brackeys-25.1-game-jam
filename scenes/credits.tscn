@@ -1,17 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2xfuxg0avy8y"]
+[gd_scene load_steps=7 format=3 uid="uid://c2xfuxg0avy8y"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_j1gmt"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="2_y6y3b"]
+[ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="3_057el"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_otb4x"]
 line_spacing = 15.0
-font_size = 72
+font = ExtResource("3_057el")
+font_size = 94
 
 [sub_resource type="LabelSettings" id="LabelSettings_ttsbd"]
-font_size = 36
+font = ExtResource("3_057el")
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2s7w"]
-font_size = 36
+font = ExtResource("3_057el")
+font_size = 48
 
 [node name="Node" type="Control"]
 layout_mode = 3

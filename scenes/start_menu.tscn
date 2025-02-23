@@ -1,14 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://hs837pv64b65"]
+[gd_scene load_steps=8 format=3 uid="uid://hs837pv64b65"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_qsu1w"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="2_b46qe"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_coli5"]
+[ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="4_el4y6"]
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="4_owbep"]
 [ext_resource type="AudioStream" uid="uid://3ryk6p127vr1" path="res://assets/Music/Puzzles.wav" id="5_iwryb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jhs60"]
 line_spacing = 15.0
-font_size = 72
+font = ExtResource("4_el4y6")
+font_size = 94
 
 [node name="Start Menu" type="Control"]
 layout_mode = 3

@@ -1,17 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://capghh1d1byak"]
+[gd_scene load_steps=9 format=3 uid="uid://capghh1d1byak"]
 
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_phn2r"]
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_wcudi"]
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="2_c6qk5"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="3_f7m7v"]
+[ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="4_fjwvj"]
 [ext_resource type="AudioStream" uid="uid://bqadoccnexl1p" path="res://assets/Music/You_re in the Future.wav" id="5_vqccj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l58xj"]
 line_spacing = 15.0
-font_size = 72
+font = ExtResource("4_fjwvj")
+font_size = 94
 
 [sub_resource type="LabelSettings" id="LabelSettings_mt3oc"]
-font_size = 48
+font = ExtResource("4_fjwvj")
+font_size = 72
 
 [node name="Game Over" type="Control"]
 layout_mode = 3
@@ -44,6 +47,7 @@ theme_override_constants/separation = 40
 layout_mode = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_l58xj")
+horizontal_alignment = 1
 
 [node name="Game Time" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
