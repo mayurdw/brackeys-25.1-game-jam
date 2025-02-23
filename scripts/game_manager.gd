@@ -2,6 +2,7 @@ extends Node
 
 var game_over = false
 var game_time: String = "0 : 00"
+var has_shown_dialogue: bool = false
 
 func on_game_over() -> void:
 	game_over = true

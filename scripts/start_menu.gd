@@ -23,6 +23,11 @@ func on_word_selected( word: TypingBox ) -> void:
 func on_word_typed(word: TypingBox) -> void:
 	print ( "Word typed = " + str ( word.box_text ) )
 	if creditsText == word.box_text:
-		SceneTransition.change_to_scene("res://scenes/credits.tscn")
+		SceneTransition.change_to_scene( "res://scenes/credits.tscn" )
 	elif startText == word.box_text:
-		SceneTransition.change_to_scene("res://scenes/level_1.tscn")
+		if GameManager.has_shown_dialogue:
+			SceneTransition.change_to_scene( "res://scenes/level_1.tscn" )
+		else:
+			SceneTransition.change_to_scene( "res://scenes/dialogue_scene.tscn" )
+	else:
+		get_tree().quit()
