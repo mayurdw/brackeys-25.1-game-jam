@@ -35,7 +35,7 @@ func _calculate_sprite_position ( box : TypingBox ) -> void:
 	
 	if box.global_position.y > get_viewport_rect().size.y / 2:
 		location = bottom
-	if left_distance < right_distance && left_distance < bottom_distance:
+	elif left_distance < right_distance && left_distance < bottom_distance:
 		location = center_left
 	else:
 		location = center_right
