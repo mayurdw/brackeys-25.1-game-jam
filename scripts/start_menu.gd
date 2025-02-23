@@ -1,9 +1,9 @@
 extends Control
 
 @onready var manager: Node2D = $Manager
-@onready var start: TypingBox = $CenterContainer/VBoxContainer/Menu/Start
-@onready var credits: TypingBox = $CenterContainer/VBoxContainer/Menu/Credits
-@onready var quit: TypingBox = $CenterContainer/VBoxContainer/Menu/Quit
+@onready var start: TypingBox = $CenterContainer/MarginContainer/VBoxContainer/Menu/Start
+@onready var credits: TypingBox = $CenterContainer/MarginContainer/VBoxContainer/Menu/Credits
+@onready var quit: TypingBox = $CenterContainer/MarginContainer/VBoxContainer/Menu/Quit
 @onready var instructions: Panel = $Instructions
 
 @export var startText = "Start"

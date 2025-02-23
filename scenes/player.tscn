@@ -8,5 +8,5 @@ script = ExtResource("1_nmyyr")
 speed = 1000
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(6, 6)
 texture = ExtResource("2_i0w0o")
