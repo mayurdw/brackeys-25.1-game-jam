@@ -23,6 +23,5 @@ func on_game_over() -> void:
 func on_game_completed( time_elapsed: String, time_elapsed_in_float: float ) -> void:
 	print( "Game Completed with time = " + time_elapsed )
 	game_time = time_elapsed
-
-func get_scores():
-	await SilentWolf.Scores.get_scores().sw_get_scores_complete
+	game_time_in_float = time_elapsed_in_float
+	SceneTransition.change_to_scene( "res://scenes/submit_scores.tscn" )
