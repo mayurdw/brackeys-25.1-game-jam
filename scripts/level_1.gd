@@ -31,4 +31,4 @@ func _on_task_manager_new_word_added( word: TypingBox ) -> void:
 func _game_completed() -> void:
 	if manager.remaining_words() == 0:
 		is_counting = false
-		GameManager.on_game_completed( time_string )
+		GameManager.on_game_completed( time_string, time_elapsed )

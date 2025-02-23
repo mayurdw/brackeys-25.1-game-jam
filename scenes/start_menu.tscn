@@ -64,6 +64,9 @@ theme_override_constants/separation = 16
 [node name="Start" parent="CenterContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("2_b46qe")]
 layout_mode = 2
 
+[node name="Leaderboard" parent="CenterContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("2_b46qe")]
+layout_mode = 2
+
 [node name="Credits" parent="CenterContainer/MarginContainer/VBoxContainer/Menu" instance=ExtResource("2_b46qe")]
 layout_mode = 2
 

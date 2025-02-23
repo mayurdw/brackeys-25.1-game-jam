@@ -1,0 +1,255 @@
+[gd_scene load_steps=6 format=3 uid="uid://btue76penmltq"]
+
+[ext_resource type="Script" path="res://scripts/leaderboards.gd" id="1_1gq3i"]
+[ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_5qwhp"]
+[ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="2_1d6k4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7q7k8"]
+font = ExtResource("2_1d6k4")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwali"]
+font = ExtResource("2_1d6k4")
+font_size = 48
+
+[node name="Leaderboards" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gq3i")
+
+[node name="HUD" parent="." instance=ExtResource("1_5qwhp")]
+layout_mode = 1
+
+[node name="Overlay" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Overlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Overlay/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Overlay/CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_1d6k4")
+theme_override_fonts/bold_font = ExtResource("2_1d6k4")
+theme_override_font_sizes/normal_font_size = 96
+theme_override_font_sizes/bold_font_size = 96
+bbcode_enabled = true
+text = "[b][u]Leaderboards[/u][/b]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+text = "1. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer1"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "2. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "3. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "4. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "5. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "6. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "7. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer8" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+text = "8. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer8"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+text = "9. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer9"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="HBoxContainer10" type="HBoxContainer" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Number" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+text = "10. "
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Name" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer10"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Loading Overlay" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Loading Overlay"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 96
+
+[node name="Label" type="Label" parent="Loading Overlay/MarginContainer"]
+layout_mode = 2
+text = "Please wait . . ."
+label_settings = SubResource("LabelSettings_mwali")
+horizontal_alignment = 1
+vertical_alignment = 2
