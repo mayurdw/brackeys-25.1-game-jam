@@ -24,3 +24,5 @@ func on_word_typed(word: TypingBox) -> void:
 	print ( "Word typed = " + str ( word.box_text ) )
 	if creditsText == word.box_text:
 		get_tree().change_scene_to_file("res://scenes/credits.tscn")
+	elif startText == word.box_text:
+		get_tree().change_scene_to_file("res://scenes/level_1.tscn")

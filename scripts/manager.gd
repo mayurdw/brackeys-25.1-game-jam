@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var display: Control
+@onready var key_sound: AudioStreamPlayer2D = $"Key Sound"
 
 const _invalid_index := -1
 const _invalid_selection := ""
@@ -67,6 +68,8 @@ func _char_entered ( character : String ) -> void:
 
 func _input ( event: InputEvent ) -> void:
 	if event is InputEventKey and event.is_pressed():
+		if not key_sound.playing:
+			key_sound.play()
 		if KEY_CAPSLOCK == event.keycode:
 			_caps_lock_enabled = not _caps_lock_enabled
 		elif event.keycode >= KEY_A and event.keycode <= KEY_Z:
@@ -90,3 +93,6 @@ func _on_word_completed ( box: TypingBox ) -> void:
 	_list_of_words.erase( box )
 	_set_selection()
 	on_word_typed.emit( box )
+
+func remaining_words () -> int:
+	return _list_of_words.size()

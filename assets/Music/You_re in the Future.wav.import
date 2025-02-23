@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bqadoccnexl1p"
+path="res://.godot/imported/You_re in the Future.wav-40442f1568cc1695b875d881ed92cf3e.sample"
+
+[deps]
+
+source_file="res://assets/Music/You_re in the Future.wav"
+dest_files=["res://.godot/imported/You_re in the Future.wav-40442f1568cc1695b875d881ed92cf3e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

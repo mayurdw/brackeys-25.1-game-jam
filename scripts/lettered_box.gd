@@ -5,8 +5,6 @@ class_name Box extends Control
 @export var task : Task
 @onready var box: PanelContainer = $Box
 
-signal task_expired
-
 func _ready() -> void:
 	box.set_box_text( task.task_name )
 	progress_bar.max_value = task.task_timer_secs
@@ -28,7 +26,7 @@ func reset_count () -> void:
 
 func _on_timer_timeout() -> void:
 	print( "Task Expired with text = " + task.task_name )
-	task_expired.emit()
+	GameManager.on_game_over()
 	
 func get_typing_box() -> TypingBox:
 	return box

@@ -10,6 +10,7 @@ extends Node2D
 @export var bottom: Control
 
 signal new_word_added ( word: TypingBox )
+signal game_completed
 
 func _ready () -> void:
 	_on_timer_expiry()
@@ -19,6 +20,8 @@ func on_task_completed( word: TypingBox ) -> void:
 	task_ui_manager.word_typed( word )
 	if level_tasks.are_there_more_tasks():
 		add_new_task( level_tasks.next_task() )
+	else:
+		game_completed.emit()
 
 func on_word_selected( box : TypingBox ) -> void:
 	_calculate_sprite_position( box )

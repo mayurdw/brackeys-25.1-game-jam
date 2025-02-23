@@ -32,6 +32,5 @@ layout_mode = 2
 [node name="Label" type="RichTextLabel" parent="MarginContainer/CenterContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Test"
 fit_content = true
 autowrap_mode = 0

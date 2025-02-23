@@ -72,4 +72,5 @@ bottom = NodePath("../HUD/Bottom Sprite Placement")
 
 [connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
 [connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]
+[connection signal="game_completed" from="Task Manager" to="." method="_game_completed"]
 [connection signal="new_word_added" from="Task Manager" to="." method="_on_task_manager_new_word_added"]

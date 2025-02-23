@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://capghh1d1byak"]
+
+[ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_phn2r"]
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_wcudi"]
+[ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="2_c6qk5"]
+[ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="3_f7m7v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l58xj"]
+line_spacing = 15.0
+font_size = 72
+
+[sub_resource type="LabelSettings" id="LabelSettings_mt3oc"]
+font_size = 48
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wcudi")
+
+[node name="HUD" parent="." instance=ExtResource("1_phn2r")]
+layout_mode = 1
+
+[node name="Manager" parent="." node_paths=PackedStringArray("display") instance=ExtResource("2_c6qk5")]
+display = NodePath("../HUD")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_l58xj")
+
+[node name="Game Time" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Game Time 0 : 00 : 00"
+label_settings = SubResource("LabelSettings_mt3oc")
+horizontal_alignment = 1
+
+[node name="Menu" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Back to Menu" parent="CenterContainer/VBoxContainer/Menu" instance=ExtResource("3_f7m7v")]
+layout_mode = 2
