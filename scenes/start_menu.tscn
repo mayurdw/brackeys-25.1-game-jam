@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hs837pv64b65"]
+[gd_scene load_steps=9 format=3 uid="uid://hs837pv64b65"]
 
 [ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_qsu1w"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="2_b46qe"]
@@ -11,6 +11,12 @@
 line_spacing = 15.0
 font = ExtResource("4_el4y6")
 font_size = 94
+
+[sub_resource type="LabelSettings" id="LabelSettings_emd4r"]
+font = ExtResource("4_el4y6")
+font_size = 72
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Start Menu" type="Control"]
 layout_mode = 3
@@ -62,5 +68,35 @@ stream = ExtResource("5_iwryb")
 volume_db = 0.5
 autoplay = true
 
+[node name="Instructions" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 177.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 48
+
+[node name="Label" type="Label" parent="Instructions/MarginContainer"]
+layout_mode = 2
+text = "Type where you wish to go. 
+
+Mouse input is not needed
+
+Press ESC to go back to menu"
+label_settings = SubResource("LabelSettings_emd4r")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="escape_pressed" from="Manager" to="." method="_escape_pressed"]
+[connection signal="mouse_input_detected" from="Manager" to="." method="_mouse_input_detected"]
 [connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
 [connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]

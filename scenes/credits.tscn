@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2xfuxg0avy8y"]
+[gd_scene load_steps=8 format=3 uid="uid://c2xfuxg0avy8y"]
 
 [ext_resource type="Script" path="res://scripts/credits.gd" id="1_j1gmt"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="2_y6y3b"]
@@ -14,6 +14,10 @@ font = ExtResource("3_057el")
 font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_a2s7w"]
+font = ExtResource("3_057el")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_tiryq"]
 font = ExtResource("3_057el")
 font_size = 48
 
@@ -48,13 +52,88 @@ horizontal_alignment = 1
 [node name="HBoxContainer" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
+alignment = 1
 
 [node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Game By:"
 label_settings = SubResource("LabelSettings_ttsbd")
 
-[node name="Label2" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Mayur \"HorribleGamer\" Wadhwani"
 label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Assets Used"
+label_settings = SubResource("LabelSettings_tiryq")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Monogram Font:"
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "datagoblin (itch.io)"
+label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Background Music Pack:"
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "joshuuu (itch.io)"
+label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Character Art: PixelOffice "
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "2dpig (itch.io)"
+label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "Indoor Office Appliances "
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+text = "semtex99 (opengameart.org)"
+label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="Label2" type="Label" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Press Esc to exit"
+label_settings = SubResource("LabelSettings_tiryq")
+horizontal_alignment = 1

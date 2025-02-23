@@ -13,6 +13,8 @@ var _caps_lock_enabled = false
 
 signal on_word_selected ( word: TypingBox )
 signal on_word_typed ( word: TypingBox )
+signal mouse_input_detected
+signal escape_pressed
 
 func set_initial_list_of_words ( words: Array [ TypingBox ] ) -> void:
 	_list_of_words = words
@@ -66,8 +68,17 @@ func _char_entered ( character : String ) -> void:
 	else:
 		_on_new_word( character )
 
+func _on_escape_presed() -> void:
+	if selected_index != _invalid_index:
+		_list_of_words[ selected_index ].reset_count()
+		_set_selection()
+	else:
+		escape_pressed.emit()
+
 func _input ( event: InputEvent ) -> void:
-	if event is InputEventKey and event.is_pressed():
+	if event is InputEventMouseButton and event.is_pressed():
+		mouse_input_detected.emit()
+	elif event is InputEventKey and event.is_pressed():
 		if not key_sound.playing:
 			key_sound.play()
 		if KEY_CAPSLOCK == event.keycode:
@@ -80,8 +91,7 @@ func _input ( event: InputEvent ) -> void:
 			_char_entered( character )
 		elif KEY_ESCAPE == event.keycode:
 			display.letter_typed ( "ESC" )
-			_list_of_words[selected_index].reset_count()
-			_set_selection()
+			_on_escape_presed()
 		elif KEY_BACKSPACE == event.keycode:
 			_on_back_space()
 		elif KEY_SHIFT == event.keycode:

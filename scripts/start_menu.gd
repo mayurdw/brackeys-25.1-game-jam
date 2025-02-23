@@ -4,10 +4,13 @@ extends Control
 @onready var start: TypingBox = $CenterContainer/VBoxContainer/Menu/Start
 @onready var credits: TypingBox = $CenterContainer/VBoxContainer/Menu/Credits
 @onready var quit: TypingBox = $CenterContainer/VBoxContainer/Menu/Quit
+@onready var instructions: Panel = $Instructions
 
 @export var startText = "Start"
 @export var creditsText = "Credits"
 @export var quitText = "Quit"
+
+var instructions_hidden = false
 
 func _ready() -> void:
 	start.set_box_text( startText )
@@ -29,5 +32,16 @@ func on_word_typed(word: TypingBox) -> void:
 			SceneTransition.change_to_scene( "res://scenes/level_1.tscn" )
 		else:
 			SceneTransition.change_to_scene( "res://scenes/dialogue_scene.tscn" )
+	else:
+		get_tree().quit()
+
+
+func _mouse_input_detected() -> void:
+	instructions_hidden = not instructions_hidden
+	instructions.visible = instructions_hidden
+
+func _escape_pressed() -> void:
+	if instructions_hidden:
+		_mouse_input_detected()
 	else:
 		get_tree().quit()

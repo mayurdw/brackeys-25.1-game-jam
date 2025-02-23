@@ -59,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Level Data" parent="." instance=ExtResource("2_cuc45")]
-words = Array[String](["hover", "parch", "Automa", "Cravats", "Matronly", "LAMBskin", "emPOWERed", "fascinate", "SKYLIGHTS", "dEpLoYmEnT"])
+words = Array[String](["agony", "mercy", "bimbo", "imply", "hover", "parch", "livens", "comets", "Thrive", "Broker", "Whacky", "Opined", "Spouses", "Prepare", "MobSter", "eMinent", "WrinKLE", "Overgrow", "STUBborn", "playBoys", "SURMISES", "INDIGNANT", "Backspin", "smuggled", "forceMerge", "BranchOff", "dEpLoYmEnT", "beguiling", "SLINGshot", "OvErJoYiNg"])
 
 [node name="Manager" parent="." node_paths=PackedStringArray("display") instance=ExtResource("1_e362k")]
 display = NodePath("../HUD")
