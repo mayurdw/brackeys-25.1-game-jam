@@ -13,4 +13,4 @@ func on_game_completed( time_elapsed: String ) -> void:
 	_navigate_to_game_over()
 	
 func _navigate_to_game_over() -> void:
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	SceneTransition.change_to_scene("res://scenes/game_over.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://sy32awi58kkg"]
+[gd_scene load_steps=8 format=3 uid="uid://sy32awi58kkg"]
 
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="1_e362k"]
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_h7rru"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drx88lqagsnsn" path="res://scenes/level_data.tscn" id="2_cuc45"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_gwmga"]
 [ext_resource type="PackedScene" uid="uid://wy2h67edgwci" path="res://scenes/task_manager.tscn" id="6_560l7"]
+[ext_resource type="AudioStream" uid="uid://bqadoccnexl1p" path="res://assets/Music/You_re in the Future.wav" id="7_yefu4"]
 
 [node name="Level 1" type="Node2D" node_paths=PackedStringArray("manager", "task_manager")]
 script = ExtResource("1_h7rru")
@@ -69,6 +70,11 @@ task_ui_manager = NodePath("../HUD/Task UI Manager")
 center_right = NodePath("../HUD/Center Right Sprite Placement")
 center_left = NodePath("../HUD/Center Left Sprite Placement")
 bottom = NodePath("../HUD/Bottom Sprite Placement")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yefu4")
+volume_db = 0.5
+autoplay = true
 
 [connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
 [connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]

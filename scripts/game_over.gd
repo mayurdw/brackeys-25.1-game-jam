@@ -17,3 +17,7 @@ func _ready() -> void:
 		game_time.text = "Game Time = " + GameManager.game_time
 	else:
 		game_time.visible = false
+
+func on_word_typed( word: TypingBox ) -> void:
+	if "Menu" == word.box_text:
+		SceneTransition.change_to_scene("res://scenes/start_menu.tscn")
