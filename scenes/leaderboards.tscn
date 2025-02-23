@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://btue76penmltq"]
+[gd_scene load_steps=7 format=3 uid="uid://btue76penmltq"]
 
 [ext_resource type="Script" path="res://scripts/leaderboards.gd" id="1_1gq3i"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_5qwhp"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="2_1d6k4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7q7k8"]
+font = ExtResource("2_1d6k4")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_aukqq"]
 font = ExtResource("2_1d6k4")
 font_size = 48
 
@@ -227,6 +231,13 @@ label_settings = SubResource("LabelSettings_7q7k8")
 [node name="Time" type="Label" parent="Overlay/CenterContainer/VBoxContainer/HBoxContainer10"]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_7q7k8")
+
+[node name="Label2" type="Label" parent="Overlay/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "
+Press Esc to exit"
+label_settings = SubResource("LabelSettings_aukqq")
+horizontal_alignment = 1
 
 [node name="Loading Overlay" type="Panel" parent="."]
 layout_mode = 1

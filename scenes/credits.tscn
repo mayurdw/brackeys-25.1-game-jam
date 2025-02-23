@@ -31,6 +31,14 @@ layout_mode = 1
 offset_right = 1920.0
 offset_bottom = 1080.0
 
+[node name="Panel" type="Panel" parent="HUD"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="CenterContainer" type="CenterContainer" parent="HUD"]
 layout_mode = 1
 anchors_preset = 15
@@ -123,13 +131,38 @@ alignment = 1
 
 [node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
-text = "Indoor Office Appliances "
+text = "Keyboard Typing One Short"
 label_settings = SubResource("LabelSettings_ttsbd")
 
 [node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer5"]
 layout_mode = 2
-text = "semtex99 (opengameart.org)"
+text = "PrimeFacts (Pixabay)"
 label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "Dialogue Manager 4"
+label_settings = SubResource("LabelSettings_ttsbd")
+
+[node name="Value" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+text = "nathanhoad (Github)"
+label_settings = SubResource("LabelSettings_a2s7w")
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="HUD/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="HUD/CenterContainer/VBoxContainer/HBoxContainer7"]
+layout_mode = 2
+text = "SilentWolf"
+label_settings = SubResource("LabelSettings_ttsbd")
 
 [node name="Label2" type="Label" parent="HUD/CenterContainer/VBoxContainer"]
 layout_mode = 2
