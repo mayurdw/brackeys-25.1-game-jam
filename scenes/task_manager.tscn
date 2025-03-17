@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://wy2h67edgwci"]
 
 [ext_resource type="PackedScene" uid="uid://d2y0f3yk8q137" path="res://scenes/player.tscn" id="1_0hy5l"]
-[ext_resource type="Script" path="res://scripts/task_manager.gd" id="1_1brux"]
+[ext_resource type="Script" uid="uid://dxsuvu1dlp3cd" path="res://scripts/task_manager.gd" id="1_1brux"]
 
 [node name="Task Manager" type="Node2D"]
 script = ExtResource("1_1brux")

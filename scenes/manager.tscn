@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ba7vglsw8lkjh"]
 
-[ext_resource type="Script" path="res://scripts/manager.gd" id="1_k0yo8"]
+[ext_resource type="Script" uid="uid://cce0p2spm64kb" path="res://scripts/manager.gd" id="1_k0yo8"]
 [ext_resource type="AudioStream" uid="uid://bmqexf4u6lij5" path="res://assets/Music/keyboard-typing-one-short-292592.mp3" id="2_w61lv"]
 
 [node name="Manager" type="Node2D"]

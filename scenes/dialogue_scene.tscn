@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b0ah53dhgfepy"]
 
-[ext_resource type="Script" path="res://scripts/dialogue_scene.gd" id="1_1iuu2"]
+[ext_resource type="Script" uid="uid://b4rpq8qrgnxxi" path="res://scripts/dialogue_scene.gd" id="1_1iuu2"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_1jd8w"]
 [ext_resource type="PackedScene" uid="uid://d2y0f3yk8q137" path="res://scenes/player.tscn" id="2_hiqso"]
 [ext_resource type="AudioStream" uid="uid://bqadoccnexl1p" path="res://assets/Music/You_re in the Future.wav" id="4_xypu1"]

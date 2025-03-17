@@ -79,8 +79,8 @@ func _input ( event: InputEvent ) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		mouse_input_detected.emit()
 	elif event is InputEventKey and event.is_pressed():
-		if not key_sound.playing:
-			key_sound.play()
+		key_sound.stop()
+		key_sound.play()
 		if KEY_CAPSLOCK == event.keycode:
 			_caps_lock_enabled = not _caps_lock_enabled
 		elif event.keycode >= KEY_A and event.keycode <= KEY_Z:

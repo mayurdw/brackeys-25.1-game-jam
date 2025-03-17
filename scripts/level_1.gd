@@ -32,3 +32,7 @@ func _game_completed() -> void:
 	if manager.remaining_words() == 0:
 		is_counting = false
 		GameManager.on_game_completed( time_string, time_elapsed )
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	$AudioStreamPlayer2D.play() 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2xfuxg0avy8y"]
 
-[ext_resource type="Script" path="res://scripts/credits.gd" id="1_j1gmt"]
+[ext_resource type="Script" uid="uid://cs1oj1ckx4o6b" path="res://scripts/credits.gd" id="1_j1gmt"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="2_y6y3b"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="3_057el"]
 

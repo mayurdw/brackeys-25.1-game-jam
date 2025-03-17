@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2y0f3yk8q137"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_nmyyr"]
+[ext_resource type="Script" uid="uid://bvkr07op4leub" path="res://scripts/player.gd" id="1_nmyyr"]
 [ext_resource type="Texture2D" uid="uid://dgx1tcu6mur3r" path="res://assets/Images/Player.png" id="2_i0w0o"]
 
 [node name="Player" type="Node2D"]

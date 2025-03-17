@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ihr645dajete"]
 
-[ext_resource type="Script" path="res://scripts/task_ui_manager.gd" id="1_2pm8v"]
+[ext_resource type="Script" uid="uid://0olwur6g3ws7" path="res://scripts/task_ui_manager.gd" id="1_2pm8v"]
 
 [node name="Task UI Manager" type="Control"]
 layout_mode = 3

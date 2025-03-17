@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://sy32awi58kkg"]
 
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="1_e362k"]
-[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_h7rru"]
+[ext_resource type="Script" uid="uid://cvid52x6mfv1b" path="res://scripts/level_1.gd" id="1_h7rru"]
 [ext_resource type="PackedScene" uid="uid://ihr645dajete" path="res://scenes/task_ui_manager.tscn" id="2_cdoir"]
 [ext_resource type="PackedScene" uid="uid://drx88lqagsnsn" path="res://scenes/level_data.tscn" id="2_cuc45"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_gwmga"]
@@ -80,3 +80,4 @@ autoplay = true
 [connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]
 [connection signal="game_completed" from="Task Manager" to="." method="_game_completed"]
 [connection signal="new_word_added" from="Task Manager" to="." method="_on_task_manager_new_word_added"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

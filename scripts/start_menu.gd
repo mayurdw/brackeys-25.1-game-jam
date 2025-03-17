@@ -50,3 +50,7 @@ func _escape_pressed() -> void:
 		_mouse_input_detected()
 	else:
 		get_tree().quit()
+
+
+func _on_start_menu_music_finished() -> void:
+	$"Start Menu Music".play()

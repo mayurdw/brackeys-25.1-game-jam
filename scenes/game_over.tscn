@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://capghh1d1byak"]
 
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="1_phn2r"]
-[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_wcudi"]
+[ext_resource type="Script" uid="uid://cfmae2dbbdlrc" path="res://scripts/game_over.gd" id="1_wcudi"]
 [ext_resource type="PackedScene" uid="uid://ba7vglsw8lkjh" path="res://scenes/manager.tscn" id="2_c6qk5"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="3_f7m7v"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="4_fjwvj"]

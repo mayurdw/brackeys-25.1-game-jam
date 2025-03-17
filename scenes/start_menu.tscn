@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://hs837pv64b65"]
 
-[ext_resource type="Script" path="res://scripts/start_menu.gd" id="1_qsu1w"]
+[ext_resource type="Script" uid="uid://bn68ww2btdq23" path="res://scripts/start_menu.gd" id="1_qsu1w"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="2_b46qe"]
 [ext_resource type="PackedScene" uid="uid://wibx1w1y1pya" path="res://scenes/hud.tscn" id="3_coli5"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="4_el4y6"]
@@ -76,7 +76,6 @@ layout_mode = 2
 [node name="Start Menu Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iwryb")
 volume_db = 0.5
-autoplay = true
 
 [node name="Instructions" type="Panel" parent="."]
 visible = false
@@ -110,3 +109,4 @@ vertical_alignment = 1
 [connection signal="mouse_input_detected" from="Manager" to="." method="_mouse_input_detected"]
 [connection signal="on_word_selected" from="Manager" to="." method="on_word_selected"]
 [connection signal="on_word_typed" from="Manager" to="." method="on_word_typed"]
+[connection signal="finished" from="Start Menu Music" to="." method="_on_start_menu_music_finished"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfr5ps0vs22ba"]
 
-[ext_resource type="Script" path="res://scripts/typed_letter.gd" id="1_dnaqd"]
+[ext_resource type="Script" uid="uid://br1mf2jo2gsn8" path="res://scripts/typed_letter.gd" id="1_dnaqd"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="2_yjigs"]
 
 [node name="TypedLetter" type="Control"]

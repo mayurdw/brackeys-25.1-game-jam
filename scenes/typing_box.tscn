@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpiwo17mxkqq2"]
 
-[ext_resource type="Script" path="res://scripts/typing_box.gd" id="1_rm1l6"]
+[ext_resource type="Script" uid="uid://1rhgrm6whapr" path="res://scripts/typing_box.gd" id="1_rm1l6"]
 [ext_resource type="FontFile" uid="uid://b4ymcsn64exif" path="res://assets/Fonts/monogram.ttf" id="2_kpta7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eom6a"]

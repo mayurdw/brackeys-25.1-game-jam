@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ly61qc1fvdrj"]
 
-[ext_resource type="Script" path="res://scripts/lettered_box.gd" id="1_penfu"]
+[ext_resource type="Script" uid="uid://g24r12rcs10q" path="res://scripts/lettered_box.gd" id="1_penfu"]
 [ext_resource type="PackedScene" uid="uid://cu830vxy42mcl" path="res://scenes/task.tscn" id="2_awu4n"]
 [ext_resource type="PackedScene" uid="uid://dpiwo17mxkqq2" path="res://scenes/typing_box.tscn" id="3_587ii"]
 
