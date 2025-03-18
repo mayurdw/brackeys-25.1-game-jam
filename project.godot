@@ -18,10 +18,10 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameManager="*res://scenes/game_manager.tscn"
 SceneTransition="*res://scenes/scene_transition.tscn"
 SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
 
@@ -35,7 +35,7 @@ window/size/mode=3
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot-vim/plugin.cfg", "res://addons/silent_wolf/plugin.cfg")
 
 [internationalization]
 
