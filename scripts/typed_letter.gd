@@ -1,5 +1,5 @@
 extends Control
-@onready var box := $"Typed Letter Box"
+@onready var box := $"CenterContainer/Typed Letter Box"
 @onready var timer: Timer = $Timer
 
 var fade_started := false

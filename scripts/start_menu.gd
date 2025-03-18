@@ -7,10 +7,10 @@ extends Control
 @onready var leaderboard: TypingBox = $CenterContainer/MarginContainer/VBoxContainer/Menu/Leaderboard
 @onready var instructions: Panel = $Instructions
 
-@export var startText = "Start"
-@export var creditsText = "Credits"
-@export var leaderboardText = "Leaderboards"
-@export var quitText = "Quit"
+@export var startText = "start"
+@export var creditsText = "credits"
+@export var leaderboardText = "leaderboards"
+@export var quitText = "quit"
 
 var instructions_hidden = false
 

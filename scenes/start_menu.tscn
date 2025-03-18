@@ -29,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qsu1w")
+startText = "play"
 
 [node name="HUD" parent="." instance=ExtResource("3_coli5")]
 layout_mode = 1
@@ -76,6 +77,7 @@ layout_mode = 2
 [node name="Start Menu Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iwryb")
 volume_db = 0.5
+autoplay = true
 
 [node name="Instructions" type="Panel" parent="."]
 visible = false
@@ -96,11 +98,9 @@ theme_override_constants/margin_top = 48
 
 [node name="Label" type="Label" parent="Instructions/MarginContainer"]
 layout_mode = 2
-text = "Type where you wish to go. 
+text = "Type the menu option you wish to access. 
 
-Mouse input is not needed
-
-Press ESC to go back to menu"
+For e.g: Type \"play\" if you want to play"
 label_settings = SubResource("LabelSettings_emd4r")
 horizontal_alignment = 1
 vertical_alignment = 1
