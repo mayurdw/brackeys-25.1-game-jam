@@ -27,20 +27,13 @@ func on_word_selected( box : TypingBox ) -> void:
 	_calculate_sprite_position( box )
 
 func _calculate_sprite_position ( box : TypingBox ) -> void:
-	var left_distance = box.global_position.distance_to( center_left.global_position )
-	var right_distance = box.global_position.distance_to( center_right.global_position )
-	var bottom_distance = box.global_position.distance_to( bottom.global_position )
-	var location : Control	
-	print ( "Left = " + str ( left_distance ) + ", Right = " + str ( right_distance ) + " & Bottom = " + str ( bottom_distance ) )
-	
-	if box.global_position.y > get_viewport_rect().size.y / 2:
-		location = bottom
-	elif left_distance < right_distance && left_distance < bottom_distance:
-		location = center_left
+	var x: int
+	if box.global_position.x < 200:
+		x = -80 
 	else:
-		location = center_right
-	
-	player.destination = location.global_position
+		x = 40
+	player.destination = box.global_position - Vector2( x, 40 )
+
 
 
 func _start_interval_timer( ) -> void:

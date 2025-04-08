@@ -10,7 +10,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_jhs60"]
 line_spacing = 15.0
 font = ExtResource("4_el4y6")
-font_size = 128
+font_size = 80
 font_color = Color(1, 0.803922, 0.458824, 1)
 outline_size = 16
 outline_color = Color(0, 0, 0, 1)

@@ -10,15 +10,15 @@
 [sub_resource type="LabelSettings" id="LabelSettings_l58xj"]
 line_spacing = 15.0
 font = ExtResource("4_fjwvj")
-font_size = 94
+font_size = 72
 
 [sub_resource type="LabelSettings" id="LabelSettings_mt3oc"]
 font = ExtResource("4_fjwvj")
-font_size = 72
+font_size = 56
 
 [sub_resource type="LabelSettings" id="LabelSettings_838jt"]
 font = ExtResource("4_fjwvj")
-font_size = 48
+font_size = 36
 
 [node name="Game Over" type="Control"]
 layout_mode = 3

@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_7q7k8"]
 font = ExtResource("2_1d6k4")
-font_size = 48
+font_size = 36
 
 [sub_resource type="LabelSettings" id="LabelSettings_aukqq"]
 font = ExtResource("2_1d6k4")
@@ -14,7 +14,7 @@ font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_mwali"]
 font = ExtResource("2_1d6k4")
-font_size = 48
+font_size = 36
 
 [node name="Leaderboards" type="Control"]
 layout_mode = 3
@@ -55,8 +55,8 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_1d6k4")
 theme_override_fonts/bold_font = ExtResource("2_1d6k4")
-theme_override_font_sizes/normal_font_size = 96
-theme_override_font_sizes/bold_font_size = 96
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
 bbcode_enabled = true
 text = "[b][u]Leaderboards[/u][/b]"
 fit_content = true

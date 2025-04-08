@@ -9,12 +9,12 @@
 script = ExtResource("1_1iuu2")
 
 [node name="HUD" parent="." instance=ExtResource("1_1jd8w")]
-offset_right = 1920.0
-offset_bottom = 1080.0
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Player" parent="." instance=ExtResource("2_hiqso")]
-position = Vector2(960, 524)
-destination = Vector2(960, 524)
+position = Vector2(576, 324)
+destination = Vector2(576, 324)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xypu1")
